@@ -22,7 +22,7 @@ module.exports = function (deployer) {
   deployer.deploy(MockERC20, "PO", "PO", 100000);
   deployer.deploy(UniswapV2ERC20); //.then(function () {
   deployer.deploy(MockERC20, "RAI", "RAI", 1000000);
-  deployer.deploy(UniswapV2Pair)
+  deployer.deploy(UniswapV2Pair);
   deployer.deploy(RaiToken).then(function () {
     // deployer.deploy(RaiMaker);
     // deployer.deploy(RaiBar);
@@ -31,7 +31,7 @@ module.exports = function (deployer) {
     // deployer.deploy(MasterChef);
   });
   deployer.deploy(ZGovernorAlpha, deployAddress, deployAddress, deployAddress);
-  deployer.deploy(UniswapV2ERC20)
+  deployer.deploy(UniswapV2ERC20);
   deployer.deploy(UniswapV2Router02, deployAddress, deployAddress);
   deployer.deploy(LiquidityValueCalculator, deployAddress);
   // deployer.deploy(Timelock, deployAddress, 10);
