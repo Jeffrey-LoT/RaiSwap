@@ -12,6 +12,7 @@ var UniswapV2Factory = artifacts.require("UniswapV2Factory");
 var Timelock = artifacts.require("Timelock");
 var UniswapV2Pair = artifacts.require("UniswapV2Pair");
 var UniswapV2Router02 = artifacts.require("UniswapV2Router02");
+var LiquidityValueCalculator = artifacts.require("LiquidityValueCalculator");
 
 const deployAddress = "0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b";
 
@@ -32,5 +33,6 @@ module.exports = function (deployer) {
   deployer.deploy(ZGovernorAlpha, deployAddress, deployAddress, deployAddress);
   deployer.deploy(UniswapV2ERC20)
   deployer.deploy(UniswapV2Router02, deployAddress, deployAddress);
+  deployer.deploy(LiquidityValueCalculator, deployAddress);
   // deployer.deploy(Timelock, deployAddress, 10);
 };
