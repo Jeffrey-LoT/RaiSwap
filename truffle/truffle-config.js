@@ -10,8 +10,6 @@ require.extensions[".txt"] = function (module, filename) {
 const mnemonic = require(appRoot + "/mnemonic.txt");
 const testPrivateKey = require(appRoot + "/test_private_key.txt");
 const ropstenPrivateKey = require(appRoot + "/ropsten_private_key.txt");
-const privateKeyDev =
-  "99B3C12287537E38C90A9219D4CB074A89A16E9CDB20BF85728EBD97C343E342";
 
 module.exports = {
   // Uncommenting the defaults below
@@ -26,12 +24,15 @@ module.exports = {
       //   port: 8545,
       // network_id: "*",
       provider: function () {
-        // return new HDWalletProvider({
+        // let provider = new HDWalletProvider({
         //   privateKeys: testPrivateKey.split(","),
-        //   providerOrUrl: "http://localhost:9933/",
+        //   providerOrUrl: "http://localhost:9933",
         // });
+        // provider.engine.addProvider(new ChainIdSubProvider(1281));
+        // return provider;
         return new PrivateKeyProvider(
-          privateKeyDev,
+          // privateKeyDev,
+          testPrivateKey.split(","),
           "http://localhost:9933/",
           1281
         );
@@ -66,9 +67,9 @@ module.exports = {
       version: "0.6.12",
       settings: {
         optimizer: {
-          enabled: true
-        }
-      }
+          enabled: true,
+        },
+      },
     },
   },
   plugins: ["moonbeam-truffle-plugin"],
