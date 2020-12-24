@@ -28,7 +28,7 @@ module.exports = {
       provider: function () {
         // return new HDWalletProvider({
         //   privateKeys: testPrivateKey.split(","),
-        //   providerOrUrl: "http://localhost:8545",
+        //   providerOrUrl: "http://localhost:9933/",
         // });
         return new PrivateKeyProvider(
           privateKeyDev,
