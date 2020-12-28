@@ -8,6 +8,15 @@ https://swap.rai.finance. Feel free to read the code. More details coming soon.
 
 MIT
 
+## How to access Test server
+### 1. Polkadot JS Explorer
+- Goto https://polkadot.js.org/apps/#/explorer and switch the endpoint to following ws address.
+   `wss://test-node.rai.finance/ws`
+  
+### 2. Ethereum compatible RPC
+- Use following Endpoint to use.
+   `https://test-node.rai.finance/`
+
 ## How to deploy
 
 ### Step 1. Prepare a moonbeam node
