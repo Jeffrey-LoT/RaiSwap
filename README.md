@@ -25,10 +25,23 @@ MIT
 
 2. Setup a private key file.
     ```shell
-   cat '99B3C12287537E38C90A9219D4CB074A89A16E9CDB20BF85728EBD97C343E342,91e788b7dd1c7c8c05ca4a2ce40c20ba55a090b5402b366a0ab05e03a6a8acde,896394437de75aa9dbf74b0761352cea29c8f9278b15b74cc53309e9dd9a2bca' > test_private_key.txt  
+   cat 'your_test_private_key1,your_test_private_key2,your_test_private_key3' > test_private_key.txt  
    ```
 
-3.
- ```shell
- cd truffle
- ```
+3. Install Dependencies.
+   ```shell
+   cd truffle
+   yarn
+   npm i -g truffle mocha 
+   ```
+
+4. Deploy a RaiSwap contract.
+    ```shell
+    truffle migrate --network development
+    ```
+   
+5. Test the contract.
+   ```shell
+   truffle test -network development
+   ```
+
